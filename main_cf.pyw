@@ -13,8 +13,7 @@ with open('TOKEN.txt') as fl:
         TOKEN = i
         break
 bot = telebot.TeleBot(TOKEN)
-bot = telebot.TeleBot(TOKEN)
-
+print(TOKEN)
 url = 'https://codeforces.com/api/contest.list?gym=false'
 
 responce = requests.get(url)
@@ -100,7 +99,7 @@ def add_id(id):
     ids.append(id)
     with open('users_ids.txt', 'w') as fl:
         for i in ids:
-            fl.write(str(i))
+            fl.write(str(i) + '\n')
     return
 
 
