@@ -13,7 +13,6 @@ with open('TOKEN.txt') as fl:
         TOKEN = i
         break
 bot = telebot.TeleBot(TOKEN)
-print(TOKEN)
 url = 'https://codeforces.com/api/contest.list?gym=false'
 
 responce = requests.get(url)
@@ -55,7 +54,6 @@ def send_new_cont(contest):
 
     print('new contest is ' + contest[1] + '; arrived at: ' + str(datetime.now()))
     for i in get_ids():
-        print(i)
         bot.send_message(i, '%s\n\nid: %s\ndate: %s\ndur_time: %s' % contest)
     return
 
