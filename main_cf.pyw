@@ -129,4 +129,9 @@ def text_handler(msg):
     bot.send_message(user_id, 'i am fine')
 
 
-bot.polling()
+while True:
+    try:
+        print('connecting')
+        bot.polling()
+    except Exception:
+        print('smthg is wrong, reconnecting')
